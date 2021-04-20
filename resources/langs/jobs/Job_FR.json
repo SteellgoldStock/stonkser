@@ -1,0 +1,82 @@
+{
+  "Chimiste": "chimist",
+  "Clown": "clown",
+  "Plombier": "plumber",
+  "Vendeur de glace": "iceSeller",
+  "Banquier": "banker",
+  "Tueur": "killer",
+
+  "chimist": {
+    "name": "Chimiste",
+    "action": "Potions vendues",
+    "haveTips": false,
+    "haveCautions": false,
+    "description": "Métier qui vous rémunère en fonction de votre popularité",
+    "salary": 40,
+    "disadvantages" : "Peut provoquer une maladie, ou même la mort, ce qui causera la fin en mourrant, et une chance / 2 de mourir avec la maladie.",
+    "benefits" : "Vous pouvez être reconnu dans le monde pour vos potions et autres et gagner plus d'argent, allant de 100 à 10000$"
+  },
+  "clown": {
+    "name": "Clown",
+    "action": "Annimations des anniversaires",
+    "haveTips": true,
+    "haveCautions": false,
+    "description": "Métier qui vous rémunère en fonction des anniversaires fétées",
+    "salary": 30,
+    "tip": {
+      "min": 10,
+      "max": 60
+    },
+    "disadvantages" : "Lors ce que vous aurez un anniversaire les parents ont une chance sur deux de vous virer car vous faitent peur aux enfants de 8 ans",
+    "benefits" : "Lorsque vous ferrez rire les gens, qui vous donneront surement des pièces à la fin de vos spectacles."
+  },
+  "plumber": {
+    "name": "Plombier",
+    "haveTips": true,
+    "haveCautions": false,
+    "action": "Réparations",
+    "description": "Réparer des canalisations chez les gens, les personnes vous ayant embochés pourraient porter plainte si vous faites mal ce travail.",
+    "salary": 250,
+    "tip": {
+      "min": 50,
+      "max": 100
+    },
+    "disadvantages": "",
+    "benefits": ""
+  },
+  "iceSeller": {
+    "name": "Vendeur de glace",
+    "haveTips": true,
+    "haveCautions": false,
+    "action": "Vendre des glaces",
+    "description": "Vendre des glaces",
+    "salary": 5,
+    "tip": {
+      "min": 1,
+      "max": 10
+    },
+    "disadvantages": "",
+    "benefits": ""
+  },
+  "banker": {
+    "name": "Banquier",
+    "haveTips": false,
+    "haveCautions": true,
+    "cautions": "Vous prennez `20%` des prets des membres",
+    "action": "Brêt de banque",
+    "description": "",
+    "salary": "Non fixe",
+    "disadvantages": "Vous pouvez mourir si un tueur en série braque votre banque.",
+    "benefits": ""
+  },
+  "killer": {
+    "name": "Tueur en série",
+    "haveTips": false,
+    "haveCautions": false,
+    "action": "Tuer des gens",
+    "description": "Une personne va vous appeler et mettre une prime sur une personne, en la décrivant, et en donnant la prime",
+    "salary": "Non fixe",
+    "disadvantages": "Peut se faire arrêter par la police et payer `10.000$` de caution.",
+    "benefits": "Peut revendre au marché noir les organes des personnes qu'il à tué."
+  }
+}

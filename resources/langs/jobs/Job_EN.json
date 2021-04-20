@@ -1,0 +1,82 @@
+{
+  "Chemist": "chemist",
+  "Clown": "clown",
+  "Plumber": "plumber",
+  "Ice Seller": "iceSeller",
+  "Banker": "banker",
+  "Serial Killer": "killer",
+
+  "chimist": {
+    "name": "Chemist",
+    "action": "Potions sold",
+    "haveTips": false,
+    "haveCautions": false,
+    "description": "Job that pays you according to your popularity",
+    "salary": 40,
+    "disadvantages" : "Can cause disease, or even death, which will cause the end by dying, and a chance / 2 to die with the disease.",
+    "benefits" : "You can be recognized in the world for your potions and others and earn more money, ranging from 100 to 10000$."
+  },
+  "clown": {
+    "name": "Clown",
+    "action": "Birthday and Anniversary Announcements",
+    "haveTips": true,
+    "haveCautions": false,
+    "description": "Job that pays you according to the birthdays celebrated",
+    "salary": 30,
+    "tip": {
+      "min": 10,
+      "max": 60
+    },
+    "disadvantages" : "When you have a birthday party, parents have a 50/50 chance of firing you because you scare 8 year olds",
+    "benefits" : "When you make people laugh, they will surely give you coins at the end of your shows."
+  },
+  "plumber": {
+    "name": "Plumber",
+    "haveTips": true,
+    "haveCautions": false,
+    "action": "Repairs",
+    "description": "Repairing pipes in people's homes, the people who screwed you could sue if you do this job wrong.",
+    "salary": 250,
+    "tip": {
+      "min": 50,
+      "max": 100
+    },
+    "disadvantages": "",
+    "benefits": ""
+  },
+  "iceSeller": {
+    "name": "Ice cream vendor",
+    "haveTips": true,
+    "haveCautions": false,
+    "action": "Selling ice cream",
+    "description": "Selling ice cream",
+    "salary": 5,
+    "tip": {
+      "min": 1,
+      "max": 10
+    },
+    "disadvantages": "",
+    "benefits": ""
+  },
+  "banker": {
+    "name": "Banker",
+    "haveTips": false,
+    "haveCautions": true,
+    "cautions": "You take `20%` of the members' loans",
+    "action": "Bank loan",
+    "description": "",
+    "salary": "Not fixed",
+    "disadvantages": "You can die if a serial killer robs your bank.",
+    "benefits": ""
+  },
+  "killer": {
+    "name": "Serial Killer",
+    "haveTips": false,
+    "haveCautions": false,
+    "action": "Killing people",
+    "description": "A person will call you and put a bounty on a person, describing them, and giving the bounty",
+    "salary": "Not fixed",
+    "disadvantages": "Can be arrested by the police and pay `10.000$` bail.",
+    "benefits": "Can sell on the black market the organs of people he has killed."
+  }
+}

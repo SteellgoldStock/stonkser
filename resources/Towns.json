@@ -1,0 +1,36 @@
+{
+  "list": ["paris", "newyork","montreal","nussdorfer","kingersheim"],
+
+  "towns": {
+    "paris": {
+      "name": "Paris",
+      "ticket": 100,
+      "rent": 45,
+      "traject": 6
+    },
+    "newyork": {
+      "name": "New-York",
+      "ticket": 120,
+      "rent": 80,
+      "traject": 3
+    },
+    "montreal": {
+      "name": "Montreal",
+      "ticket": 95,
+      "rent": 65,
+      "traject": 2
+    },
+    "nussdorfer": {
+      "name": "Nussdorfer",
+      "ticket": 60,
+      "rent": 35,
+      "traject": 1
+    },
+    "kingersheim": {
+      "name": "Kingersheim",
+      "ticket": 500,
+      "rent": 120,
+      "traject": 1
+    }
+  }
+}

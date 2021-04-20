@@ -1,0 +1,56 @@
+{
+  "economy": {
+    "0": {
+      "name": "job",
+      "description": "Commencer a gagner de l'argent grace à cette commande, se faire recruter dans une entreprise du métier de votre choix",
+      "usage": "job [sub] [job]",
+      "subCommand": "[list:l | join:j | quit:q]"
+    },
+    "1": {
+      "name": "steal",
+      "description": "Volez de l'argent à un joueur, il vous est requis d'être dans la même ville que le membre ciblé",
+      "usage": "steal [member]",
+      "subCommand": "[null]"
+    },
+    "2": {
+      "name": "account",
+      "description": "Verifier votre solde pour être sur que on vous a pas voler, ou braquer la banque ou vous êtes",
+      "usage": "account",
+      "subCommand": "[null]"
+    },
+    "3": {
+      "name": "bank",
+      "description": "Déposer ou retirer de l'argent dans votre banque",
+      "usage": "bank [sub] [amount]",
+      "subCommand": "[deposit:d | w:withdraw]"
+    }
+  },
+  "informations": {
+    "0": {
+      "name": "help",
+      "description": "Récuprerer la liste des commandes disponible sur le serveur",
+      "usage": "help [sub] [command]",
+      "subCommand": "[info:i]"
+    },
+    "1": {
+      "name": "about",
+      "description": "Avoir des informations sur le bot",
+      "usage": "about",
+      "subCommand": ""
+    }
+  },
+  "configurations": {
+    "0": {
+      "name": "lang",
+      "description": "Modifier la langue du bot sur ce serveur",
+      "usage": "lang [FR | EN | ES]",
+      "subCommand": "[null]"
+    },
+    "1": {
+      "name": "prefix",
+      "description": "Modifier le prefix des commandes sur ce serveur",
+      "usage": "prefix [prefix]",
+      "subCommand": "[null]"
+    }
+  }
+}
