@@ -9,8 +9,6 @@ exports.Connection = exports.MySQL.createConnection({
     database : 'stonkser'
 });
 
-// First
-
 exports.Connection.connect(function(err) {
     if (err) { return console.error('Error in the connection: ' + err.stack); }
     console.log(exports.Colors.rainbow('Connecté à la base de données avec l\'identifiant: ' + exports.Connection.threadId));
