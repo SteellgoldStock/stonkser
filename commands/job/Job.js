@@ -11,7 +11,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
 
     switch (args[0]) {
         default:
-            if(USER.job !== null) return Embed.send(message.channel,message,Embed.ERROR,LANG.translate("JOB_HAS_ONE", JOBS[USER.job]['name'], await Time.timeConverter(USER.jobJoinDate)),null,false, Embed.ERROR_COLOR)
+            if(USER.job !== null) return Embed.send(message.channel,message,Embed.JOB,LANG.translate("JOB_HAS_ONE", JOBS[USER.job]['name'], await Time.timeConverter(USER.jobJoinDate)))
             return Embed.send(message.channel, message, Embed.ERROR, LANG.translate("JOB_ERROR"), null, false, Embed.ERROR_COLOR)
         case "i":
         case "infos":

@@ -7,12 +7,14 @@ exports.JOB = "Métier"
 exports.ERROR = "Erreur"
 exports.BANK = "Banque"
 exports.STEAL = "Vol"
+exports.WORK = "Travaille"
+exports.SLEEP = "Sommeil"
 
 exports.ERROR_COLOR = "#bd6a6e"
 exports.DEFAULT_COLOR = "#96bc6a"
 exports.HOW_COLOR = "#f5e38b"
 
-exports.send = async(Channel, Message, Title = exports.INFOS, Description = null, Array = null, showIcon = false, Color = exports.DEFAULT_COLOR, addBanner = false) => {
+exports.send = async(Channel, Message, Title = exports.INFOS, Description = null, Array = null, showIcon = false, Color = exports.DEFAULT_COLOR, addBanner = false, addCustomBanner = false) => {
     const embed = new Discord.MessageEmbed()
         .setTitle("Stonkser • " + Title)
         .setTimestamp()
@@ -31,6 +33,8 @@ exports.send = async(Channel, Message, Title = exports.INFOS, Description = null
     }
     if(addBanner){
         embed.setImage("https://cdn.discordapp.com/attachments/717441452136857601/834031120659513374/bannerST.png")
+    }else if(addCustomBanner){
+        embed.setImage(addCustomBanner)
     }
     return Channel.send(embed)
 }

@@ -7,9 +7,9 @@
       "subCommand": "[list:l | join:j | quit:q]"
     },
     "1": {
-      "name": "steal",
+      "name": "rob",
       "description": "Volez de l'argent à un joueur, il vous est requis d'être dans la même ville que le membre ciblé",
-      "usage": "steal [member]",
+      "usage": "rob [member]",
       "subCommand": "[null]"
     },
     "2": {
@@ -23,6 +23,18 @@
       "description": "Déposer ou retirer de l'argent dans votre banque",
       "usage": "bank [sub] [amount]",
       "subCommand": "[deposit:d | w:withdraw]"
+    },
+    "4": {
+      "name": "work",
+      "description": "Travailler",
+      "usage": "work",
+      "subCommand": ["null"]
+    },
+    "5": {
+      "name": "sleep",
+      "description": "Dormir pour récuperer l'energie (pour travailler)",
+      "usage": "sleep",
+      "subCommand": ["null"]
     }
   },
   "informations": {

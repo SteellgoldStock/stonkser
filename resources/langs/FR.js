@@ -9,8 +9,8 @@ const texts = {
   JOB_ERROR: "Vous n'avez pas encore de travail",
   JOB_HAS_ONE: (JOB, JOBJOINDATE) => `Vous travaillez dans une entreprise de \`${JOB}\`, vous avez rejoin ce travail le \`${JOBJOINDATE}\``,
   JOB_RANDOM_TIP: (MIN, MAX) => `Pourboire aléatoire entre ${MIN}$ et ${MAX}$`,
-  JOB_NOT_PRECISED: "Vous devez préciser le métier au quel vous voulez voir ces informations\n- Exemple: `-job i chimist`",
-  JOB_DONT_EXIST: "Le métier que vous venez de préciser n'existe pas, mais vous pouvez en faire une suggestion avec la commande `-suggest [text]`",
+  JOB_NOT_PRECISED: (PREFIX) => `Vous devez préciser le métier au quel vous voulez voir ces informations\n- Exemple: \`${PREFIX}job i chimist\``,
+  JOB_DONT_EXIST: (PREFIX) =>  `Le métier que vous venez de préciser n'existe pas, mais vous pouvez en faire une suggestion avec la commande \`${PREFIX}suggest [text]\``,
   JOB_INFORMATIONS_EMBED_TITLE: (JOB) => `Informations sur le métier de ${JOB}`,
   JOB_INFORMATIONS_EMBED_CONTENT: (SALARY, ACTION) => `Payé(e) \`${SALARY}$\` par ${ACTION}`,
   JOB_INFORMATIONS_EMBED_BENEFITS: (BENEFITS) => `\n\n**Avantages**: ${BENEFITS}`,
@@ -19,7 +19,7 @@ const texts = {
   JOB_CHIMIST: (SALARY) => `🧪 - Chimiste [${SALARY}$/Potions vendues]\n`,
   JOB_CLOWN: (SALARY) => `🎈 - Clown [${SALARY}$/Anniversaires]\n`,
   JOB_PLUMBER: (SALARY) => `⚒ - Plombier [${SALARY}$/Réparations]\n`,
-  JOB_ICESELLER: (SALARY) => `🍨 - Vendeur de glace [${SALARY}$/Glaces vendues]\\n`,
+  JOB_ICESELLER: (SALARY) => `🍨 - Vendeur de glace [${SALARY}$/Glaces vendues]\n`,
   JOB_BANKER: "💵 - Banquier [Voir informations]\n",
   JOB_KILLER: "🔪 - Tueur en série [En fonction de la prime sur la personne]",
   JOB_JOINED_SUCCESS: (JOB) => `Vous avez rejoin une entreprise exerçant le métier de \`${JOB}\``,
@@ -27,6 +27,15 @@ const texts = {
   JOB_NOT_PRECISED_FOR_JOIN: "Vous n'avez pas préciser le métier que vous voulez rejoindre, pour en avoir la liste, faites `-job list`",
   JOB_NEED_TO_LEAVE_TO_CHANGE: "Vous avez déjà un métier, faites `-job leave` pour quitter votre travail.",
   JOB_CANT_LEAVE_BECAUSE_DONT_HAVE_JOB: "Vous n'avez pas de métier, faites `-job join [job]` pour rejoindre un travail.",
+
+  // WORK
+  WORK_FATIGUE_TOO_HIGH: (PREFIX) => `Vous êtes trop fatigué(e) vous ne pouvez plus travailler, rétablissez vous en dormant (\`${PREFIX}sleep\`)`,
+  WORK_SUCCESS_CHIMIST: (COUNT, EARNED) => `<:potion:834195240356937759> Vous venez de vendre \`${COUNT} potions\` que vous venez de créer, vous avez gagner \`${EARNED}$\``,
+  WORK_DONT_FATIGUE: "Vous n'êtes pas fatigué(e) !",
+
+  // SLEEP
+  SLEEP_START: (PREFIX) => `Bonne nuit, nous nous reverrons dans \`8 heures\` !`,
+  SLEEP_STOP: (PREFIX) => `Bonjour, avez-vous bien dormi(e) ?`,
 
   // ABOUT
   ABOUT_EMBED_DESCRIPTION: "Stonkser est un bot créer pour recréer une économie complète avec 4 villes : Nussdorfer,  Montreal, Paris, New-York, vous aurez plusieurs métiers, chacun son but dans la société.",
