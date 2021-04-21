@@ -30,7 +30,9 @@ const texts = {
 
   // WORK
   WORK_FATIGUE_TOO_HIGH: (PREFIX) => `Vous êtes trop fatigué(e) vous ne pouvez plus travailler, rétablissez vous en dormant (\`${PREFIX}sleep\`)`,
-  WORK_SUCCESS_CHIMIST: (COUNT, EARNED) => `<:potion:834195240356937759> Vous venez de vendre \`${COUNT} potions\` que vous venez de créer, vous avez gagner \`${EARNED}$\``,
+  WORK_SUCCESS_CHIMIST: (COUNT, EARNED) => `🧪 Vous venez de vendre \`${COUNT} potions\` que vous venez de créer, vous avez gagner \`${EARNED}$\``,
+  WORK_SUCCESS_CLOWN: (COUNT, EARNED) => `🎈 Vous avez animé \`${COUNT} anniversaires\`, vous avez gagner \`${EARNED}$\``,
+  WORK_SUCCESS_PLUMBER: (COUNT, EARNED) => `⚒ Vous venez de faire \`${COUNT} réparations\`, vous avez gagner \`${EARNED}$\``,
   WORK_DONT_FATIGUE: "Vous n'êtes pas fatigué(e) !",
 
   // SLEEP
