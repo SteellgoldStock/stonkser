@@ -10,7 +10,13 @@ exports.createUser = async(userId, guildId) => {
                 guild_id: guildId,
                 money: 100,
                 money_bank: 50,
-                town: "nussdorfer"
+                town: "nussdorfer",
+                job: null,
+                jobJoinDate: null,
+                fatigue: 0,
+                rent: "none",
+                next_rent_pay: null,
+                traject_end: null
             }, function (error, results){
                 console.log(results)
             })
