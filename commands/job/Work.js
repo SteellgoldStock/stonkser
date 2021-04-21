@@ -10,11 +10,24 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG, PREFI
     switch (USER.job){
         case "chimist":
             const POTIONS = Math.round(getRandomInt(21) / 2) // FATIGUE COUNT
-            const EARNED = POTIONS * 2
+            const EARNED_CHIMIST = POTIONS * 2
             addFatigue(message.author.id, message.guild.id, POTIONS, USER)
-            addMoney(message.author.id,message.guild.id,EARNED,USER)
-            return Embed.send(message.channel, message, Embed.WORK,LANG.translate("WORK_SUCCESS_CHIMIST", POTIONS, EARNED))
+            addMoney(message.author.id,message.guild.id,EARNED_CHIMIST,USER)
+            return Embed.send(message.channel, message, Embed.WORK,LANG.translate("WORK_SUCCESS_CHIMIST", POTIONS, EARNED_CHIMIST))
         case "clown":
+            const BIRTHDAYS = Math.round(getRandomInt(8 / 2)) // Birthdays Count
+            const EARNED_CLOWN = BIRTHDAYS * 30
+            addFatigue(message.author.id, message.guild.id, BIRTHDAYS, USER)
+            addMoney(message.author.id,message.guild.id,EARNED_CLOWN,USER)
+
+            return Embed.send(message.channel, message, Embed.WORK,LANG.translate("WORK_SUCCESS_CLOWN", BIRTHDAYS, EARNED_CLOWN))
+        break;
+        case "plumber":
+            const REPAIRS = Math.round(getRandomInt(12 / 2))
+            const EARNED_PLUMBER = REPAIRS * 60
+            addFatigue(message.author.id, message.guild.id, REPAIRS, USER)
+            addMoney(message.author.id,message.guild.id, REPAIRS,USER)
+            return Embed.send(message.channel, message, Embed.WORK,LANG.translate("WORK_SUCCESS_PLUMBER", REPAIRS, EARNED_PLUMBER))
         break;
     }
 }
