@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 
+exports.NOTEPAD = []
+
 exports.timeConverter = async (UNIX_timestamp, delay = 0) => {
     const a = new Date(UNIX_timestamp * 1000);
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -12,12 +14,21 @@ exports.timeConverter = async (UNIX_timestamp, delay = 0) => {
     return date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
 }
 
-exports.getTime = async(Delay = false, delay = 0) => {
-    if (Delay) {
-        return Math.round((new Date().getTime() / 1000) + delay) // TEMP FUTURE
-    } else {
-        return Math.round(new Date().getTime() / 1000) // TEMP PRESENT
+exports.getTime = async(Delay = false, delay = {
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+}, inMS) => {
+    const date = new Date()
+
+    if(Delay){
+        date.setHours(date.getHours() + delay["hours"])
+        date.setMinutes(date.getMinutes() + delay["minutes"])
+        date.setSeconds(date.getSeconds() + delay["seconds"])
     }
+
+    if(inMS) return date.getTime()
+    return Math.floor(date.getTime() / 1000)
 }
 
 exports.imp = async(Now, Next) => {
