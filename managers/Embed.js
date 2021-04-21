@@ -8,6 +8,7 @@ exports.ERROR = "ERROR"
 exports.BANK = "BANK"
 exports.STEAL = "STEAL"
 exports.WORK = "WORK"
+exports.RENT = "RENT"
 exports.SLEEP = "SLEEP"
 
 exports.ERROR_COLOR = "#bd6a6e"
