@@ -68,15 +68,5 @@
     "salary": "Non fixe",
     "disadvantages": "Vous pouvez mourir si un tueur en série braque votre banque.",
     "benefits": ""
-  },
-  "killer": {
-    "name": "Tueur en série",
-    "haveTips": false,
-    "haveCautions": false,
-    "action": "Tuer des gens",
-    "description": "Une personne va vous appeler et mettre une prime sur une personne, en la décrivant, et en donnant la prime",
-    "salary": "Non fixe",
-    "disadvantages": "Peut se faire arrêter par la police et payer `10.000$` de caution.",
-    "benefits": "Peut revendre au marché noir les organes des personnes qu'il à tué."
   }
 }

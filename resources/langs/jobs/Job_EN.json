@@ -68,15 +68,5 @@
     "salary": "Not fixed",
     "disadvantages": "You can die if a serial killer robs your bank.",
     "benefits": ""
-  },
-  "killer": {
-    "name": "Serial Killer",
-    "haveTips": false,
-    "haveCautions": false,
-    "action": "Killing people",
-    "description": "A person will call you and put a bounty on a person, describing them, and giving the bounty",
-    "salary": "Not fixed",
-    "disadvantages": "Can be arrested by the police and pay `10.000$` bail.",
-    "benefits": "Can sell on the black market the organs of people he has killed."
   }
 }
