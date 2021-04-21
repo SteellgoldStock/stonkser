@@ -25,7 +25,8 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG, PREFI
         exports.configurations += "`"+ Commands["configurations"][element]["name"] +"` **»** "+ Commands["configurations"][element]["description"] +".\n"
     });
 
-    Embed.send(message.channel,message,LANG.translate("HELP_EMBED_TITLE"),LANG.translate("HELP_EMBED_DESCRIPTION",PREFIX),{
+    // LANG.translate("HELP_EMBED_TITLE")
+    Embed.send(message.channel,message,Embed.INFOS,LANG.translate("HELP_EMBED_DESCRIPTION",PREFIX),{
         0: {
             "title": LANG.translate("HELP_EMBED_CATEGORY_ECONOMY_TITLE", exports.economyCount),
             "content": exports.economy,
