@@ -74,16 +74,20 @@ const texts = {
   ROB_ERROR_YOURSELF: "Vous ne pouvez pas vous voler à vous même",
   ROB_ERROR_MISSIG: "Vous avez oublier de préciser la cible",
   ROB_SUCCESS: (USER, AMOUNT) => `Vol réussi, en toute discression, vous avez dérober réussi à récuperer \`${AMOUNT}$\` sur \`${USER}\``,
+  ROB_FAILED: (USER) => `\`${USER}\` vous a surpris, vous avez été(e) condamné à 2 heure de prison`,
   ROB_ERROR_VICTIM_MONEY: (USER) => `\`${USER}\` n'a pas asser d'argent sur lui, vous perdrez de l'energie pour rien`,
 
   // RENT
-  RENT_ERROR_ENOUGHT_MONEY: "Vous n'avez pas assez d'argent sur votre compte bancaire pour payer le loyer",
-  RENT_SUCCESS_PAY: "Vous avez correctement payer le loyer !",
-  RENT_ERROR_ALREADY: (PREFIX) => `Vous avez déjà un loyer, pour changer de ville, ou vendre votre loyer avec \`${PREFIX}rent sell\`.`,
-  RENT_CHOOSED: (PREFIX) => `Votre appartement a été choisi, bienvenue chez vous, pour voir votre maison exécutez ce \`${PREFIX}rent\`.`,
+  RENT_ERROR_ENOUGHT_MONEY: "Vous n'avez pas assez d'argent sur votre compte bancaire pour payer le loyer.",
+  RENT_SUCCESS_PAY: "Vous avez payé le loyer correctement !",
+  RENT_ERROR_ALREADY: (PREFIX) => `Vous avez déjà un loyer, pour le changer, déménager dans une autre ville, ou vendre votre loyer avec... \`${PREFIX}rent sell\``,
+  RENT_CHOOSED: (PREFIX) => `Votre appartement a été choisi, bienvenue chez vous, pour voir votre maison exécuter cette \`${PREFIX}rent\``,
   RENT_ALREADY_CHOOSEN: `L'appartement était déjà pris, cherchez-en un autre...`,
-  RENT_FATIGUE: (PREFIX) => `Vous êtes fatigué de chercher un appartement, dormez (avec \`${PREFIX}sleep\`) pour récupérer votre énergie`,
-  RENT_ERROR_DONT_HAVE: (PREFIX) => `Vous n'avez pas encore d'appartement/maison, faites \`${PREFIX}rent buy\` pour en acheter un(e)`,
+  RENT_FATIGUE: (PREFIX) => `Vous êtes fatigué de chercher un appartement, dormez (avec \${PREFIX}sleep\`) pour récupérer votre énergie`,
+  RENT_ERROR_DONT_HAVE: (PREFIX) => `Vous n'avez pas encore d'appartement/maison, faites \`${PREFIX}rent buy\` pour en acheter un.`,
+  RENT_SELLED: (PREFIX) => `Vous avez vendu votre appartement/maison, vous ne pourrez pas faire ce qui suit tant que vous n'aurez pas un nouveau logement :`,
+  RENT_SELLED_0: `Voler l'argent des gens`,
+  RENT_SELLED_1: `Effectuer des vols [UNIQUEMENT POUR LES GANGSTERS]`,
 
   // PLANE
   PLANE_MISSING_TOWN: (PREFIX) => `La ville à la quel vous voulez vous rendre n'existe pas, faite \`${PREFIX}towns list\``,
@@ -91,8 +95,16 @@ const texts = {
   PLANE_FLY_START: (TRAJECT_TIME) => `🛫 L'avion s'envole, pour un trajet de \`${TRAJECT_TIME} heures\``,
 
   // PRISON
-  PRISON_ERROR_IN: "Vous êtes en prison, attendez d'être libérer avant de pouvoir ré-executer des commandes RP",
-  PRISON_EXIT: "Vous êtes sorti(e) de prison, qu'allez vous faire en premier ?",
+  PRISON_ERROR_IN: "Vous êtes en prison, attendez d'être libéré avant de pouvoir ré-exécuter les commandes RP.",
+  PRISON_ERROR_IN_0: "Qui lance l'évasion ?",
+  PRISON_ERROR_IN_1: "**»** Avant de lancer une évasion, il vous faudra débourser 2.000$ en espèces.\n",
+  PRISON_ERROR_IN_2: `**»** Si vous n'avez pas assez d'argent et que vous voulez vous échapper, vous pouvez jouer aux cartes en misant de l'argent avec \`-cards [ammount]\`\n`,
+  PRISON_ERROR_IN_3: "**»** Sachez que votre évasion peut échouer, si cela se produit, vous resterez 1 jour de plus en prison.\n",
+  PRISON_ERROR_IN_4: "Après l'évasion ?",
+  PRISON_ERROR_IN_5: "**»** Une fois sorti de prison, vous devrez contacter un membre de la mafia russe pour vous faire retirer de la liste des criminels évadés afin que vous puissiez reprendre votre travail et votre vie dans le jeu.\n",
+  PRISON_ERROR_IN_6: "Qui contacte la mafia ?",
+  PRISON_ERROR_IN_7: (PREFIX) => `**»** Faites \`${PREFIX}mafia\` cela vous coutera \`100$\`\n`,
+  PRISON_EXIT: "Vous êtes sorti de prison, que ferez-vous en premier ?",
   PRISON_ESCAPED: "", // TODO
   PRISON_ESCAPED_FAILED: "", // TODO
 
@@ -100,7 +112,23 @@ const texts = {
   PAY_ERROR_MEMBER_NOT_DEFINED: "Vous n'avez pas précisé le membre à qui vous vouliez faire le virement.",
   PAY_ERROR_AMOUNT_NOT_DEFINED: "Vous n'avez pas précisé le montant que vous vouliez envoyer.",
   PAY_ERROR_DONT_HAVE_ENOUGH_MONEY: "Vous n'avez pas assez d'argent pour l'envoyer.",
-  PAY_EMBED_DESCRIPTION: (AMOUNT, USER, MONEY) => `Vous avez envoyé \`${AMOUNT}$\` à \`${USER}\` avec succès.\nVous avez désormais ${MONEY}$ sur votre compte.`
+  PAY_EMBED_DESCRIPTION: (AMOUNT, USER, MONEY) => `Vous avez envoyé \`${AMOUNT}$\` à \`${USER}\` avec succès.\nVous avez désormais \`${MONEY}$\` sur votre compte.`,
+
+  // CARDS
+  CARDS_ERROR_NOT_PRISON: "Vous devez être en prison pour éxécuter cette commande.",
+  CARDS_ERROR_AMOUNT_NOT_PRECISED: "Vous n'avez pas précisé le montant à parier",
+  CARDS_LOOSE: "Vous n'avez malheureusement pas gagner, retenter votre chance",
+  CARDS_WIN: (AMOUNT, DEFAULT_AMOUNT) => `Félicitations, vous avez gagné \`${AMOUNT}$\` en pariant \`${DEFAULT_AMOUNT}$\``,
+  CARDS_ERROR_NOT_ENOUGH_MONEY: (AMOUNT, USER_MONEY) => `Vous avez essayé de parié \`${AMOUNT}$\`, mais vous n'avez que \`${USER_MONEY}$\` sur votre compte`,
+
+  // MAFIA
+  MAFIA_ESCAPED_SUCCESS: "Vous avez appellé la mafia avec succès, cela vous aura couter `100$`",
+  MAFIA_ERROR_NOT_ESCAPED: (PREFIX) => `Vous ne vous êtes pas échappé, faites \`${PREFIX}escape\` pour vous évader (coute \`2000$\`)`,
+
+  // ESCAPE
+  ESCAPE_ERROR_NOT_IN_PRISON: "Vous n'êtes pas en prison, vous ne pouvez donc pas vous évader",
+  ESCAPE_ERROR_FAILED: "Vous avez échoué votre évasion, vous resterez donc `1 jour` de plus en prison",
+  ESCAPE_SUCCESS: "Vous avez réussi votre évasion avec succès, que ferez vous maintenant ?"
 }
 
 const LANGS = {

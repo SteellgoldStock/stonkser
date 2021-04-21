@@ -1,5 +1,5 @@
 const texts = {
-  FILE_LANG_FOR: "FR",
+  FILE_LANG_FOR: "EN",
 
   MISSING_ARGUMENTS: (ARGUMENT) => `The argument \`${ARGUMENT}\` is not defined`,
   MAXIMAL_CHARACTERS: (MAXIMAL_CHARACTERS) => `You have put more characters than the maximum number (\`${MAXIMAL_CHARACTERS}\`)`,
@@ -93,6 +93,14 @@ const texts = {
 
   // PRISON
   PRISON_ERROR_IN: "You are in jail, wait to be released before you can re-execute RP commands",
+  PRISON_ERROR_IN_0: "Who launch escape ?",
+  PRISON_ERROR_IN_1: "**»** Before launching an escape it will cost you `2.000$` in cash\n",
+  PRISON_ERROR_IN_2: `**»** If you don't have enough money and want to escape you can play cards by betting money with \`-cards [ammount]\`\n`,
+  PRISON_ERROR_IN_3: "**»** Know that your escape can fail, if this happens, you will stay 1 more day in prison\n",
+  PRISON_ERROR_IN_4: "After the escape ?",
+  PRISON_ERROR_IN_5: "**»** Once out of prison, you will have to contact a member of the Russian mafia to get you off the list of escaped criminals so that you can resume your work and your life in the game\n",
+  PRISON_ERROR_IN_6: "How contact the mafia ?",
+  PRISON_ERROR_IN_7: (PREFIX) => `**»** Do \`${PREFIX}mafia\` it will cost you \`100$\`\n`,
   PRISON_EXIT: "You are out of prison, what will you do first?",
   PRISON_ESCAPED: "", // TODO
   PRISON_ESCAPED_FAILED: "", // TODO
