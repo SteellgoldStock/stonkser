@@ -6,9 +6,7 @@ Client.on("message", message => {
     if (!message.guild) return;
     if (message.author.bot) return;
 
-    Connection.query(`SELECT *
-                      FROM guilds
-                      WHERE guild_id = ${message.guild.id}`, function (error, guildDB, fields) {
+    Connection.query(`SELECT * FROM guilds WHERE guild_id = ${message.guild.id}`, function (error, guildDB, fields) {
         if (error) throw error;
 
         const Prefix = guildDB[0].bot_prefix;
