@@ -31,6 +31,10 @@
       "FR": "Travailler",
       "EN": "Work"
     },
+    "RENT": {
+      "FR": "Lieu de vie",
+      "EN": "Home"
+    },
     "SLEEP": {
       "FR": "Sommeil",
       "EN": "Sleepy"
