@@ -18,6 +18,7 @@ exports.createUser = async(userId, guildId) => {
                 next_rent_pay: null,
                 traject_end: null,
                 sleeping_time: null,
+                prison_time: null
             }, function (error, results){
                 console.log(results)
             })
