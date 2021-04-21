@@ -38,6 +38,10 @@
     "SLEEP": {
       "FR": "Sommeil",
       "EN": "Sleepy"
+    },
+    "PRISON": {
+      "FR": "Prison",
+      "EN": "Prison"
     }
   }
 }
