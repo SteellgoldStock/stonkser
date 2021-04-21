@@ -19,17 +19,25 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
             if (error) throw error;
             if(!robbed_user[0].money <= 20){
                 const DERROBED = Math.round(parseInt(robbed_user[0].money) / 4)
-                return Embed.send(message.channel,message,Embed.STEAL,LANG.translate("ROB_SUCCESS", victim_user.user.username,DERROBED),null,false)
+                Connection.query(`UPDATE users SET ? WHERE user_id = ${victim_user.id} AND guild_id = ${message.guild.id}`, {money: parseInt(robbed_user[0].money) - DERROBED})
+                Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {money: parseInt(USER.money) + DERROBED})
+                return Embed.send(message.channel,message,Embed.STEAL,LANG.translate("ROB_SUCCESS", victim_user.user.username,DERROBED),null,false,Embed.DEFAULT_COLOR)
             }else{
                 return Embed.send(message.channel,message,Embed.STEAL,LANG.translate("ROB_ERROR_VICTIM_MONEY",victim_user.user.username))
             }
         });
     }else{
-        Connection.query(`INSERT INTO prison SET ?`, {
-            user_id: message.author.id,
-            guild_id: message.guild.id,
-            expiration: await Time.getTime(true,60)
-        });
+        Time.getTime(true,{
+            hours: 2,
+            minutes: 0,
+            seconds: 0
+        }, true).then(value => {
+            console.log(value)
+            Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {
+                prison_time: value
+            });
+        })
+        return Embed.send(message.channel,message,Embed.STEAL,LANG.translate("ROB_FAILED",victim_user.user.username),null,false,Embed.ERROR_COLOR)
     }
 }
 
