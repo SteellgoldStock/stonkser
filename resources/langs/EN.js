@@ -77,6 +77,15 @@ const texts = {
   // RENT
   RENT_ERROR_ENOUGHT_MONEY: "You do not have enough money in your bank account to pay the rent",
   RENT_SUCCESS_PAY: "You have paid the rent correctly!",
+  RENT_ERROR_ALREADY: (PREFIX) => `You have already a rent, to change move to a another town, or sell your rent with \`${PREFIX}rent sell\``,
+  RENT_CHOOSED: (PREFIX) => `Your apartment has been chosen, welcome home, to see your home execute this \`${PREFIX}rent\``,
+  RENT_ALREADY_CHOOSEN: `The apartment was already taken, look for another one...`,
+  RENT_FATIGUE: (PREFIX) => `You are tired of looking for an apartment, sleep (with \`${PREFIX}sleep\`) to recover your energy`,
+  RENT_DONT_HAVE: (PREFIX) => `You don't have an apartment/house yet, do \`${PREFIX}rent buy\` to buy one`,
+  RENT_SELLED: (PREFIX) => `You have been selled your apartment/house, you will not be able to do the following until you have a new home:`,
+  RENT_SELLED_0: `Rob money from people`,
+  RENT_SELLED_1: `Carrying out robberies [GANGSTER ONLY]`,
+  RENT_SELLED_2: ``,
 
   // PLANE
   PLANE_MISSING_TOWN: (PREFIX) => `The city you want to go to doesn't exist, so make \`${PREFIX}towns list`,

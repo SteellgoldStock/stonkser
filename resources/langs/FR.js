@@ -77,6 +77,11 @@ const texts = {
   // RENT
   RENT_ERROR_ENOUGHT_MONEY: "Vous n'avez pas assez d'argent sur votre compte bancaire pour payer le loyer",
   RENT_SUCCESS_PAY: "Vous avez correctement payer le loyer !",
+  RENT_ERROR_ALREADY: (PREFIX) => `Vous avez déjà un loyer, pour changer de ville, ou vendre votre loyer avec \`${PREFIX}rent sell\`.`,
+  RENT_CHOOSED: (PREFIX) => `Votre appartement a été choisi, bienvenue chez vous, pour voir votre maison exécutez ce \`${PREFIX}rent\`.`,
+  RENT_ALREADY_CHOOSEN: `L'appartement était déjà pris, cherchez-en un autre...`,
+  RENT_FATIGUE: (PREFIX) => `Vous êtes fatigué de chercher un appartement, dormez (avec \`${PREFIX}sleep\`) pour récupérer votre énergie`,
+  RENT_DONT_HAVE: (PREFIX) => `Vous n'avez pas encore d'appartement/maison, faites \`${PREFIX}rent buy\` pour en acheter un(e)`,
 
   // PLANE
   PLANE_MISSING_TOWN: (PREFIX) => `La ville à la quel vous voulez vous rendre n'existe pas, faite \`${PREFIX}towns list\``,
