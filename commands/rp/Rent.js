@@ -17,6 +17,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG, PREFI
                 },false,Embed.DEFAULT_COLOR,false, "https://i.goopics.net/W9w2q.jpg")
 
         case "pay":
-
+            // TODO: Fonction avec le temp pour savoir si il doit payer le loyer
+            return Embed.send(message.channel, message, "Appartement", "")
     }
 }
