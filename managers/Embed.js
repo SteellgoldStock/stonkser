@@ -10,6 +10,7 @@ exports.STEAL = "STEAL"
 exports.WORK = "WORK"
 exports.RENT = "RENT"
 exports.SLEEP = "SLEEP"
+exports.PRISON = "PRISON"
 
 exports.ERROR_COLOR = "#bd6a6e"
 exports.DEFAULT_COLOR = "#96bc6a"
