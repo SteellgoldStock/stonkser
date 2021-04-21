@@ -10,7 +10,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
     if(USER.money + USER.money_bank >= args[1]) {
         Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {money: parseInt(USER.money) - parseInt(args[1])});
         Connection.query(`UPDATE users SET ? WHERE user_id = ${victim.id} AND guild_id = ${message.guild.id}`, {money: parseInt(USER.money) + parseInt(args[1])});
-        return Embed.send(message.channel, message, Embed.BANK, LANG.translate("PAY_EMBED_DESCRIPTION", money, victim.user.username));
+        return Embed.send(message.channel, message, Embed.BANK, LANG.translate("PAY_EMBED_DESCRIPTION", money, victim.user.username, USER.money));
     }else{
         return Embed.send(message.channel, message, Embed.BANK, LANG.translate("PAY_ERROR_DONT_HAVE_ENOUGH_MONEY"), null, false, Embed.ERROR_COLOR);
     }

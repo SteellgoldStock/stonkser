@@ -25,7 +25,6 @@ exports.Colors = require('colors')
 exports.Game = require('./managers/Game')
 exports.PrisonCommands = {};
 
-
 require('./listener/members/Messages')
 require('./listener/members/Member')
 require('./listener/bot/Guild')

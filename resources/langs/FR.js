@@ -89,7 +89,7 @@ const texts = {
   PAY_ERROR_MEMBER_NOT_DEFINED: "Vous n'avez pas précisé le membre à qui vous vouliez faire le virement.",
   PAY_ERROR_AMOUNT_NOT_DEFINED: "Vous n'avez pas précisé le montant que vous vouliez envoyer.",
   PAY_ERROR_DONT_HAVE_ENOUGH_MONEY: "Vous n'avez pas assez d'argent pour l'envoyer.",
-  PAY_EMBED_DESCRIPTION: (AMOUNT, USER) => `Vous avez envoyé \`${AMOUNT}$\` à \`${USER}\` avec succès.`
+  PAY_EMBED_DESCRIPTION: (AMOUNT, USER, MONEY) => `Vous avez envoyé \`${AMOUNT}$\` à \`${USER}\` avec succès.\nVous avez désormais ${MONEY}$ sur votre compte.`
 }
 
 const LANGS = {
