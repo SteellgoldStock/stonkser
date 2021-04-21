@@ -74,10 +74,6 @@ const texts = {
   ROB_SUCCESS: (USER, AMOUNT) => `Vol réussi, en toute discression, vous avez dérober réussi à récuperer \`${AMOUNT}$\` sur \`${USER}\``,
   ROB_ERROR_VICTIM_MONEY: (USER) => `\`${USER}\` n'a pas asser d'argent sur lui, vous perdrez de l'energie pour rien`,
 
-  // RENT
-  RENT_ERROR_ENOUGHT_MONEY: "Vous n'avez pas assez d'argent sur votre compte bancaire pour payer le loyer",
-  RENT_SUCCESS_PAY: "Vous avez correctement payer le loyer !",
-
   // PLANE
   PLANE_MISSING_TOWN: (PREFIX) => `La ville à la quel vous voulez vous rendre n'existe pas, faite \`${PREFIX}towns list\``,
   PLANE_TICKET_CANT_BUY: "Vous n'avez pas assez d'argent pour vous payer un ticket d'avion pour ce vol",
