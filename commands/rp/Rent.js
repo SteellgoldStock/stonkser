@@ -8,6 +8,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG, PREFI
 
     switch(args[0]) {
         default:
+            if(USER.rent === "none") return Embed.send(message.channel, message, Embed.ERROR,LANG.translate("RENT_ERROR_DONT_HAVE", PREFIX), null, false, Embed.ERROR_COLOR, false, false)
             return Embed.send(message.channel, message, Embed.RENT,":warning: Vous devez payer votre loyer !",{
                     0: {
                         "title": "Loyer",
@@ -41,18 +42,25 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG, PREFI
                 if (error) throw error
                 if(results.length > 0){
                     addFatigue(message.author.id,message.guild.id,1,USER)
-                    return Embed.send(message.channel, message, Embed.ERROR, LANG.translate("RENT_ALREADY_EXIST"),null,false,Embed.ERROR_COLOR)
+                    return Embed.send(message.channel, message, Embed.RENT, LANG.translate("RENT_ALREADY_EXIST"),null,false,Embed.ERROR_COLOR)
                 }
 
                 Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {rent: Random});
-                return Embed.send(message.channel, message, Embed.ERROR, LANG.translate("RENT_CHOOSED", PREFIX),null,false, Embed.DEFAULT_COLOR,false,Rent)
+                return Embed.send(message.channel, message, Embed.RENT, LANG.translate("RENT_CHOOSED", PREFIX),null,false, Embed.DEFAULT_COLOR,false,Rent)
             });
             break
         case "s":
         case "sell":
-            if(USER.rent === "none") return Embed.send(message.channel, message, Embed.ERROR,LANG.translate("RENT_ERROR_DONT_HAVE"), null, false, Embed.ERROR_COLOR, false, false)
+            if(USER.rent === "none") return Embed.send(message.channel, message, Embed.ERROR,LANG.translate("RENT_ERROR_DONT_HAVE", PREFIX), null, false, Embed.ERROR_COLOR, false, false)
             Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {rent: "none", money: parseInt(USER.money) + parseInt(TOWN["towns"][USER.town]["rent"])});
-            return Embed.send(message.channel, message, Embed.ERROR,LANG.translate("RENT_SELLED"), null, false, Embed.DEFAULT_COLOR, false, false)
+            return Embed.send(message.channel, message, Embed.RENT,LANG.translate("RENT_SELLED"), {
+                0: {
+                    "title": "Actions",
+                    "content": LANG.translate("RENT_SELLED_0") + "\n"+
+                        LANG.translate("RENT_SELLED_1"),
+                    "inline": false
+                }
+            }, false, Embed.DEFAULT_COLOR, false, false)
     }
 }
 
