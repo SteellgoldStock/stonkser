@@ -5,7 +5,7 @@ const texts = {
   MAXIMAL_CHARACTERS: (MAXIMAL_CHARACTERS) => `You have put more characters than the maximum number (\`${MAXIMAL_CHARACTERS}\`)`,
   MISSING_PERMISSIONS: (PERMISSION) => `You do not have the required permission to execute this (\`${PERMISSION}\`)`,
 
-  // ABOUT
+  // JOB
   JOB_ERROR: "You don't have a job yet",
   JOB_HAS_ONE: (JOB, JOBJOINDATE) => `You work in a company of \`${JOB}\`, you joined this job on \`${JOBJOINDATE}\``,
   JOB_RANDOM_TIP: (MIN, MAX) => `Random tip between ${MIN}$ and ${MAX}$`,
@@ -38,9 +38,9 @@ const texts = {
   SLEEP_STOP: `Bonjour, avez-vous bien dormi(e) ?`,
 
   // ABOUT
-  ABOUT_EMBED_DESCRIPTION: "$tonkser is a bot created to recreate a complete economy with 4 cities : Nussdorfer,  Montreal, Paris, New-York, you will have several jobs, each with its own purpose in society.",
-  ABOUT_EMBED_FIELD_TITLE: "Why $tonsker ?",
-  ABOUT_EMBED_FIELD_CONTENT: "The name of $tonkser, was used for this bot because it recreates an economy",
+  ABOUT_EMBED_DESCRIPTION: "Stonsker is a bot created to recreate a complete economy with 4 cities : Nussdorfer,  Montreal, Paris, New-York, you will have several jobs, each with its own purpose in society.",
+  ABOUT_EMBED_FIELD_TITLE: "Why Stonsker ?",
+  ABOUT_EMBED_FIELD_CONTENT: "The name of Stonkser, was used for this bot because it recreates an economy",
 
   // HELP
   HELP_EMBED_TITLE: "Informations",
