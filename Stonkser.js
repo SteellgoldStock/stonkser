@@ -24,6 +24,7 @@ exports.Embed = require('./managers/Embed')
 exports.Colors = require('colors')
 exports.Game = require('./managers/Game')
 exports.PrisonCommands = {};
+exports.Time = require('./managers/Time')
 
 require('./listener/members/Messages')
 require('./listener/members/Member')

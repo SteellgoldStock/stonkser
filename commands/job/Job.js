@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
-const { Client, Colors, Version, Embed, Connection, Game} = require("../../Stonkser");
-const Time = require('../../managers/Time')
+const { Client, Colors, Version, Embed, Connection, Game, Time} = require("../../Stonkser");
 
 module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
     if (!message.guild) return;
@@ -53,7 +52,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
             if(!args[1]) return Embed.send(message.channel, message, Embed.ERROR, LANG.translate("JOB_NOT_PRECISED_FOR_JOIN"),null,false, Embed.ERROR_COLOR)
             if (!JOB_LIST.includes(args[1])) return Embed.send(message.channel, message, Embed.ERROR, "Le métier que vous venez de préciser n'existe pas, mais vous pouvez en faire une suggestion avec la commande `-suggest [text]`", null, false, Embed.ERROR_COLOR)
             if(USER.job !== null) return Embed.send(message.channel, message, Embed.ERROR, LANG.translate("JOB_NEED_TO_LEAVE_TO_CHANGE"), null, false, Embed.ERROR_COLOR);
-            Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {job: args[1], jobJoinDate: await Time.getTime()});
+            Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {job: args[1], jobJoinDate: await Time.getTime(false,null,true)});
             return Embed.send(message.channel, message, Embed.ERROR, LANG.translate("JOB_JOINED_SUCCESS", JOBS[args[1]]['name']), null, false, Embed.ERROR_COLOR);
         case "q":
         case "leave":
