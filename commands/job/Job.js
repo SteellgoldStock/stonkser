@@ -5,7 +5,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
     if (!message.guild) return;
 
     const JOB_LIST = [
-        "chimist", "clown", "plumber", "iceSeller", "banker", "killer"
+        "chimist", "clown", "plumber", "iceSeller", "banker"
     ]
 
     switch (args[0]) {
@@ -43,8 +43,8 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
                         LANG.translate("JOB_CLOWN", JOBS["clown"]["salary"])+
                         LANG.translate("JOB_PLUMBER", JOBS["plumber"]["salary"])+
                         LANG.translate("JOB_ICESELLER", JOBS["iceSeller"]["salary"])+
-                        LANG.translate("JOB_BANKER")+
-                        LANG.translate("JOB_KILLER")
+                        LANG.translate("JOB_BANKER")
+                        // LANG.translate("JOB_KILLER")
                 }
             });
         case "j":
