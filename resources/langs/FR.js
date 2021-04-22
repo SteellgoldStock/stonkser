@@ -4,6 +4,8 @@ const texts = {
   MISSING_ARGUMENTS: (ARGUMENT) => `L'argument \`${ARGUMENT}\` n'est pas défini`,
   MAXIMAL_CHARACTERS: (MAXIMAL_CHARACTERS) => `Vous avez mis plus de caractères que le nombre maximum (\`${MAXIMAL_CHARACTERS}\`)`,
   MISSING_PERMISSIONS: (PERMISSION) => `Vous n'avez pas la permission requise pour executer ceci (\`${PERMISSION}\`)`,
+  MENTIONS_ERROR_CHANNEL: "Vous avez oublier de mentionner le salon souhaité",
+  NO_FOUND_OPTION: "L'option que vous souhaitez est malheureusement inexistante",
 
   // ABOUT
   JOB_ERROR: "Vous n'avez pas encore de travail",
@@ -16,12 +18,12 @@ const texts = {
   JOB_INFORMATIONS_EMBED_BENEFITS: (BENEFITS) => `\n\n**Avantages**: ${BENEFITS}`,
   JOB_INFORMATIONS_EMBED_DISADVANTAGES: (DISADVANTAGES) => `\n**Inconvénients**: ${DISADVANTAGES}`,
   JOB_JOBS_LIST: "Liste des métiers",
-  JOB_CHIMIST: (SALARY) => `🧪 - Chimiste [${SALARY}$/Potions vendues]\n`,
-  JOB_CLOWN: (SALARY) => `🎈 - Clown [${SALARY}$/Anniversaires]\n`,
-  JOB_PLUMBER: (SALARY) => `⚒ - Plombier [${SALARY}$/Réparations]\n`,
-  JOB_ICESELLER: (SALARY) => `🍨 - Vendeur de glace [${SALARY}$/Glaces vendues]\n`,
-  JOB_BANKER: "💵 - Banquier [Voir informations]\n",
-  JOB_KILLER: "🔪 - Tueur en série [En fonction de la prime sur la personne]",
+  JOB_CHIMIST: (SALARY) => `🧪 - Chimiste () [${SALARY}$/Potions vendues]\n`,
+  JOB_CLOWN: (SALARY) => `🎈 - Clown () [${SALARY}$/Anniversaires]\n`,
+  JOB_PLUMBER: (SALARY) => `⚒ - Plombier () [${SALARY}$/Réparations]\n`,
+  JOB_ICESELLER: (SALARY) => `🍨 - Vendeur de glace () [${SALARY}$/Glaces vendues]\n`,
+  JOB_BANKER: "💵 - Banquier () [Voir informations]\n",
+  // JOB_KILLER: "🔪 - Tueur en série [En fonction de la prime sur la personne]",
   JOB_JOINED_SUCCESS: (JOB) => `Vous avez rejoin une entreprise exerçant le métier de \`${JOB}\``,
   JOB_LEAVED_SUCCESS: (JOB) => `Vous avez démissioner d'une entreprise exerçant le métier de \`${JOB}\``,
   JOB_NOT_PRECISED_FOR_JOIN: "Vous n'avez pas préciser le métier que vous voulez rejoindre, pour en avoir la liste, faites `-job list`",
@@ -54,7 +56,7 @@ const texts = {
   // CONFIG
   CONFIG_PREFIX_UPDATE: (PREFIX) => `Vous venez de modifier le prefix de ce serveur, à présent vous devez utiliser \`${PREFIX}\` !`,
   CONFIG_LANG_UPDATE: (LANG) => `Vous venez de modifier la langue du bot sur ce serveur, à présent le bot vous parlera en \`${LANGS[LANG]}\` !`,
-  CONFIG_ERROR_LANG_NOT_FOUND: (LANG) => `La langue \`${LANG}\` n'existe pas, donc je vous ai remis sur la langue définie ulterierement`,
+  CONFIG_ERROR_LANG_NOT_FOUND: (LANG, LANGS_AV) => `La langue \`${LANG}\` n'existe pas, donc je vous ai remis sur la langue définie ulterierement, voici la liste des langues disponibles ${LANGS_AV}`,
 
   // ACCOUNT
   ACCOUNT_ERROR_NO_JOB: "Aucun métier",
@@ -102,11 +104,9 @@ const texts = {
   PRISON_ERROR_IN_3: "**»** Sachez que votre évasion peut échouer, si cela se produit, vous resterez 1 jour de plus en prison.\n",
   PRISON_ERROR_IN_4: "Après l'évasion ?",
   PRISON_ERROR_IN_5: "**»** Une fois sorti de prison, vous devrez contacter un membre de la mafia russe pour vous faire retirer de la liste des criminels évadés afin que vous puissiez reprendre votre travail et votre vie dans le jeu.\n",
-  PRISON_ERROR_IN_6: "Qui contacte la mafia ?",
+  PRISON_ERROR_IN_6: "Comment contacter la mafia ?",
   PRISON_ERROR_IN_7: (PREFIX) => `**»** Faites \`${PREFIX}mafia\` cela vous coutera \`100$\`\n`,
   PRISON_EXIT: "Vous êtes sorti de prison, que ferez-vous en premier ?",
-  PRISON_ESCAPED: "", // TODO
-  PRISON_ESCAPED_FAILED: "", // TODO
 
   // PAY
   PAY_ERROR_MEMBER_NOT_DEFINED: "Vous n'avez pas précisé le membre à qui vous vouliez faire le virement.",
@@ -126,9 +126,22 @@ const texts = {
   MAFIA_ERROR_NOT_ESCAPED: (PREFIX) => `Vous ne vous êtes pas échappé, faites \`${PREFIX}escape\` pour vous évader (coute \`2000$\`)`,
 
   // ESCAPE
+  ESCAPE_ALREADY_FAILED: "Vous êtes dans le cachot, vous ne pouvez pas sortir avant la fin de votre temp en prison",
   ESCAPE_ERROR_NOT_IN_PRISON: "Vous n'êtes pas en prison, vous ne pouvez donc pas vous évader",
-  ESCAPE_ERROR_FAILED: "Vous avez échoué votre évasion, vous resterez donc `1 jour` de plus en prison",
-  ESCAPE_SUCCESS: "Vous avez réussi votre évasion avec succès, que ferez vous maintenant ?"
+  ESCAPE_ERROR_FAILED: "Vous avez raté votre évasion, vous êtes amené au cachot",
+  ESCAPE_SUCCESS: "Vous avez réussi votre évasion avec succès, que ferez vous maintenant ?",
+
+  // CHANNELS
+  CHANNELS_HELP_DESCRIPTION: "Cette commande permet de définir le(s) salons auquel les membres de votre serveur pourra utiliser les commandes de jeu du Bot, si aucun salon est défini alors le Bot pourra être exécuté partout",
+  CHANNELS_HELP_HOW: "Fonctionnement",
+  CHANNELS_HELP_ADD: (PREFIX) => `**»** Pour ajouter un salon faite \`${PREFIX}channels add [mention]\`\n`,
+  CHANNELS_HELP_DEL: (PREFIX) => `**»** Pour ajouter un salon faite \`${PREFIX}channels del [mention]\``,
+  CHANNELS_HELP_LIST: (PREFIX) => `**»** Pour voir les salons qui ont étées ajoutées à la liste faite, \`${PREFIX}channels list\`\n`,
+  CHANNELS_SUCCESS_ADDED: (ID) => `Le salon <#${ID}> à correctement été ajouté !`,
+  CHANNELS_SUCCESS_REMOVED: (ID) => `Le salon <#${ID}> à correctement été retiré !`,
+  CHANNELS_ERROR_EXIST: `Vous ne pouvez pas retirer un salon de la liste s'il n'est pas dedans`,
+  CHANNELS_LIST: "Voici la liste des salons dans les quels on peut executer les commandes RP: ",
+  CHANNELS_COMMAND: (PREFIX) => `Ce salon ne vous permet pas d'executer des commandes RP (\`${PREFIX}channels list\`)`
 }
 
 const LANGS = {
