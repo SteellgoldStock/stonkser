@@ -5,6 +5,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
     if(!message.guild) return;
 
     if(USER.prison_time === null) return Embed.send(message.channel, message, Embed.PRISON, LANG.translate("ESCAPE_ERROR_NOT_IN_PRISON"), null, false, Embed.ERROR_COLOR);
+    if(USER.escape_failed !== null) return Embed.send(message.channel, message, Embed.PRISON, LANG.translate("ESCAPE_ALREADY_FAILED"), null, false, Embed.ERROR_COLOR);
     const LUCK = getRandomInt(2);
     if(LUCK !== 1){
         Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {prison_time: (parseInt(USER.prison_time) + 86400000)})
