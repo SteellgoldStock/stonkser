@@ -26,6 +26,26 @@ Client.on("guildCreate", guild => {
                     .setThumbnail(Client.user.avatarURL())
                 return Channels.getDefaultChannel(guild).send(embed)
             });
+
+            const list = Client.guilds.cache.get(guild.id);
+            list.members.cache.each(member => {
+                Connection.query('INSERT INTO users SET ?', {
+                    user_id: member.id,
+                    guild_id: guild.id,
+                    money: 500,
+                    money_bank: 500,
+                    town: "nussdorfer",
+                    job: null,
+                    jobJoinDate: null,
+                    fatigue: 0,
+                    rent: "none",
+                    next_rent_pay: null,
+                    traject_end: null,
+                    sleeping_time: null,
+                    prison_time: null,
+                    escape_failed: null
+                })
+            })
         }
     });
 });

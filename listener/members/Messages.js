@@ -27,7 +27,7 @@ Client.on("message", message => {
 
                 if (Registry.GameCommand.includes(command)) {
                     if (guildDB[0].channels.includes(message.channel.id)) {
-
+                        // Sommeil
                         if (results[0].sleeping_time !== null) {
                             if (!Registry.SleepCommands.includes(command)) return cmd.run(Client, message, args, results[0], JOBS, TOWNS, LANG, Prefix, guildDB[0])
                             Time.getTime(false, null, true).then(value => {
@@ -41,6 +41,7 @@ Client.on("message", message => {
                                     })
                                 }
                             })
+                        // PRISON
                         } else if (results[0].prison_time !== null) {
                             if (!Registry.PrisonCommands.includes(command)) return cmd.run(Client, message, args, results[0], JOBS, TOWNS, LANG, Prefix, guildDB[0])
                             Time.getTime(false, null, true).then(value => {
@@ -69,7 +70,17 @@ Client.on("message", message => {
                                     })
                                 }
                             })
-                        } else {
+                        } else if (results[0].traject_end !== null) {
+                            if (!Registry.PlaneCommand.includes(command)) return cmd.run(Client, message, args, results[0], JOBS, TOWNS, LANG, Prefix, guildDB[0])
+                            Time.getTime(false, null, true).then(value => {
+                                if (value >= results[0].traject_end) {
+                                    Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {traject_end: null});
+                                    return Embed.send(message.channel, message, Embed.PRISON, LANG.translate("PLANE_FLY_END"))
+                                } else {
+                                    return Embed.send(message.channel, message, Embed.PRISON, LANG.translate("PLANE_FLY_INFO"))
+                                }
+                            })
+                        } else{
                             cmd.run(Client, message, args, results[0], JOBS, TOWNS, LANG, Prefix, guildDB[0])
                         }
                     } else {

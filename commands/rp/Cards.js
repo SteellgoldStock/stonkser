@@ -6,6 +6,7 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG) => {
 
     if(USER.prison_time === null) return Embed.send(message.channel, message,Embed.PRISON,LANG.translate("CARDS_ERROR_NOT_PRISON"), null, false, Embed.ERROR_COLOR)
     if(!args[0]) return Embed.send(message.channel, message, Embed.PRISON, LANG.translate("CARDS_ERROR_AMOUNT_NOT_PRECISED"), null, false, Embed.ERROR_COLOR)
+    if(USER.money < args[0]) return Embed.send(message.channel, message, Embed.PRISON,LANG.translate("CARDS_ERROR_AMOUNT_BIG"),null,false,Embed.ERROR_COLOR)
 
     const LUCK = getRandomInt(2);
     if(LUCK !== 1){

@@ -45,8 +45,12 @@ module.exports.run = async (Client, message, args, USER, JOBS, TOWN, LANG, PREFI
                     return Embed.send(message.channel, message, Embed.RENT, LANG.translate("RENT_ALREADY_EXIST"),null,false,Embed.ERROR_COLOR)
                 }
 
-                Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {rent: Random});
-                return Embed.send(message.channel, message, Embed.RENT, LANG.translate("RENT_CHOOSED", PREFIX),null,false, Embed.DEFAULT_COLOR,false,Rent)
+                if(USER.money >= TOWN[USER.town]["rent"]){
+                    Connection.query(`UPDATE users SET ? WHERE user_id = ${message.author.id} AND guild_id = ${message.guild.id}`, {rent: Random, money: parseInt(USER.money) - parseInt(TOWN["towns"][USER.town]["rent"])});
+                    return Embed.send(message.channel, message, Embed.RENT, LANG.translate("RENT_CHOOSED", PREFIX),null,false, Embed.DEFAULT_COLOR,false,Rent)
+                }else{
+                    return
+                }
             });
             break
         case "s":

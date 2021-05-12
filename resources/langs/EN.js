@@ -94,6 +94,8 @@ const texts = {
   PLANE_MISSING_TOWN: (PREFIX) => `The city you want to go to does not exist, make \`${PREFIX}towns list\``,
   PLANE_TICKET_CANT_BUY: "You don't have enough money to buy a ticket for this flight",
   PLANE_FLY_START: (TRAJECT_TIME) => `🛫 The plane takes off, for a journey of \`${TRAJECT_TIME} hours\``,
+  PLANE_FLY_END: `🛫 You have arrived at your destination !`,
+  PLANE_FLY_INFO: `🛫 You are in an airplane and cannot execute interactive commands`,
 
   // PRISON
   PRISON_ERROR_IN: "You are in jail, wait to be released before you can re-execute the RP commands.",
